@@ -1,0 +1,29 @@
+# This program takes in user input and performs a simple calculation
+import argparse
+
+# Set up command line arguments
+parser = argparse.ArgumentParser(description='Simple Calculator')
+parser.add_argument('num1', type=int, help='First number')
+parser.add_argument('operator', type=str, help='Operator (+, -, *, /)')
+parser.add_argument('num2', type=int, help='Second number')
+
+# Parse arguments and perform calculation
+args = parser.parse_args()
+num1 = args.num1
+operator = args.operator
+num2 = args.num2
+
+if operator == '+':
+    result = num1 + num2
+elif operator == '-':
+    result = num1 - num2
+elif operator == '*':
+    result = num1 * num2
+elif operator == '/':
+    result = num1 / num2
+else:
+    print('Invalid operator')
+    exit()
+
+# Print result
+print(f'{num1} {operator} {num2} = {result}')
